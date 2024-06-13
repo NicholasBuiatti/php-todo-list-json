@@ -18,9 +18,16 @@
 
     <div id="app">
         <section class="bg-dark text-white vh-100">
-            <div class="container">
-                <h1 class="text-center">Questa è la lista delle cosa da fare</h1>
-                <pre class="bg-danger"> {{ toDoList }} </pre>
+            <div class="container text-center">
+                <h1 class="mb-5">Questa è la lista delle cosa da fare</h1>
+
+                <ul class="list-group list-group-flush w-50 m-auto">
+                    <li v-for="toDo, i in toDoList" @click="checked(i)"
+                        :class="(toDo.checked == 'false') ? 'text-decoration-line-through , bg-success' : 'bg-primary'"
+                        class="list-group-item border border-3 border-info rounded-3 mb-2" style="cursor: pointer;">{{
+                        toDo.toDo }}</li>
+                </ul>
+                <!-- <pre class="bg-danger"> {{ toDoList }} </pre> -->
             </div>
         </section>
     </div>

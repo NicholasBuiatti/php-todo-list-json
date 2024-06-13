@@ -6,6 +6,16 @@ createApp({
             toDoList: [],
         }
     },
+    methods: {
+        checked(index) {
+            console.log(this.toDoList);
+            if (this.toDoList[index].checked == 'true') {
+                this.toDoList[index].checked = 'false'
+            } else {
+                this.toDoList[index].checked = 'true'
+            }
+        }
+    },
     mounted() {
         console.log("prova VUE");
 

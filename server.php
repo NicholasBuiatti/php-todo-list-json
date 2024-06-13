@@ -3,15 +3,15 @@
 $toDoList = [
     [
         'toDo' => 'Fare la spesa',
-        'chacked' => 'true'
+        'checked' => 'true'
     ],
     [
         'toDo' => 'Pulire Casa',
-        'chacked' => 'true'
+        'checked' => 'true'
     ],
     [
         'toDo' => 'Rifare il letto',
-        'chacked' => 'false'
+        'checked' => 'false'
     ],
 ];
 
