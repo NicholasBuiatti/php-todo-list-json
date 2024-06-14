@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             toDoList: [],
-            task: 'prova',
+            task: '',
         }
     },
     methods: {
@@ -17,11 +17,23 @@ createApp({
             }
         },
         addTask() {
-            newTask = {
-                "toDo": this.task,
-                "checked": true
+            // CREAZIONE OGGETTO DA PUSHARE con i riferimenti per il $_get
+            const newTask = {
+                task: this.task,
+                // checked: true
             }
-            this.toDoList.push(newTask)
+
+            postRequestConfig = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }
+            // INVIO I DATI CON AXIOS METODO POST PER LA SCRITTURA SUL "DB"
+            axios.post('./create.php', newTask, postRequestConfig).then(results => {
+                this.toDoList = results.data;
+            });
+
+            this.task = ''
         }
     },
     mounted() {
