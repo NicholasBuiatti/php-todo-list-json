@@ -23,7 +23,7 @@
 
                 <ul class="list-group list-group-flush w-50 m-auto">
                     <li v-for="toDo, i in toDoList" @click="checked(i)"
-                        :class="(toDo.checked == 'false') ? 'text-decoration-line-through , bg-success' : 'bg-primary'"
+                        :class="(toDo.checked == false) ? 'text-decoration-line-through , bg-success' : 'bg-primary'"
                         class="list-group-item border border-3 border-info rounded-3 mb-2" style="cursor: pointer;">{{
                         toDo.toDo }}</li>
                 </ul>
