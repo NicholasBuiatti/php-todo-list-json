@@ -34,7 +34,23 @@ createApp({
             });
 
             this.task = ''
-        }
+        },
+        deleteTask(index) {
+            //ELEMENTO SELEZIONATO LO SALVO IN UNA VARIABILE
+            const indexDeleteElement = {
+                delete: index,
+            }
+
+            postRequestConfig = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            }
+            // INVIO I DATI CON AXIOS METODO POST PER LA SCRITTURA SUL "DB"
+            axios.post('./delete.php', indexDeleteElement, postRequestConfig).then(results => {
+                this.toDoList = results.data;
+            });
+        },
     },
     mounted() {
         console.log("prova VUE");

@@ -22,10 +22,15 @@
                 <h1 class="mb-5">Questa è la lista delle cosa da fare</h1>
 
                 <ul class="list-group list-group-flush w-50 m-auto">
-                    <li v-for="toDo, i in toDoList" @click="checked(i)"
-                        :class="(toDo.checked == false) ? 'text-decoration-line-through , bg-success' : 'bg-primary'"
-                        class="list-group-item border border-3 border-info rounded-3 mb-2" style="cursor: pointer;">{{
-                        toDo.toDo }}</li>
+                    <li v-for="toDo, i in toDoList"
+                        class="d-flex row m-0 justify-content-between align-item-center list-group-item border border-3 border-info rounded-3 mb-2 p-0">
+                        <p @click="checked(i)"
+                            :class="(toDo.checked == false) ? 'text-decoration-line-through , bg-success' : 'bg-primary'"
+                            class="col m-0 p-0" style="cursor: pointer;">
+                            {{ toDo.toDo }}
+                        </p>
+                        <button @click="deleteTask(i)" class="btn btn-danger col-1">x</button>
+                    </li>
                 </ul>
                 <!-- <pre class="bg-danger"> {{ toDoList }} </pre> -->
                 <div class="input-group mb-3 m-auto mt-5 w-50">
