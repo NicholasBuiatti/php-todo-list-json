@@ -28,6 +28,10 @@
                         toDo.toDo }}</li>
                 </ul>
                 <!-- <pre class="bg-danger"> {{ toDoList }} </pre> -->
+                <div class="input-group mb-3 m-auto mt-5 w-50">
+                    <input v-model="task" type="text" class="form-control" placeholder="Inserisci la nuova Task">
+                    <button @click="addTask()" class="btn btn-outline-secondary" type="button">Add Task</button>
+                </div>
             </div>
         </section>
     </div>

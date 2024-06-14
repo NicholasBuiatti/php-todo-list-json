@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             toDoList: [],
+            task: 'prova',
         }
     },
     methods: {
@@ -14,6 +15,13 @@ createApp({
             } else {
                 this.toDoList[index].checked = true
             }
+        },
+        addTask() {
+            newTask = {
+                "toDo": this.task,
+                "checked": true
+            }
+            this.toDoList.push(newTask)
         }
     },
     mounted() {
