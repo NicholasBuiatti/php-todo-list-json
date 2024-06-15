@@ -1,14 +1,1 @@
-[
-    {
-        "toDo": "Fare la spesa",
-        "checked": true
-    },
-    {
-        "toDo": "Pulire Casa",
-        "checked": true
-    },
-    {
-        "toDo": "Rifare il letto",
-        "checked": true
-    }
-]
+[{"toDo":"Pulire Casa","checked":true},{"toDo":"Fare la spesa","checked":true}]

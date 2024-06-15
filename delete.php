@@ -4,7 +4,7 @@
 $fileContent = file_get_contents("store.json");
 
 // NON ENTRA NELL'IF MA SE LO TOLGO FUNZIONA MA NON MI LEGGE L'INDICE DELL'ARRA DELETE
-if (isset($_POST["indexDeleteElement"])) {
+if (isset($_POST["delete"])) {
     //FACCIO IN MODO CHE PHP LO POSSA LEGGERE NEL SUO LINGUAGGIO
     $toDoList = json_decode($fileContent, true);
 
@@ -20,7 +20,6 @@ if (isset($_POST["indexDeleteElement"])) {
     //STAMPO L'ARRAY NEL FILE STORE
     file_put_contents("store.json", $fileContent);
 } else {
-    echo "non entro nell'if";
 }
 
 // DICO CHE IL FILE SUCCESSIVO è UN FILE JSON
